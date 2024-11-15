@@ -28,8 +28,9 @@ export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, 
             doUseDefaultCss={doUseDefaultCss}
             classes={classes}
             displayMessage={!messagesPerField.existsError("password", "password-confirm")}
-            headerNode={msg("updatePasswordTitle")}
+            headerNode={"Update Password"}
         >
+            <p id="kc-page-subtitle" style={{ marginTop: -20 }}>Please enter your new password</p>
             <form id="kc-passwd-update-form" action={url.loginAction} method="post" className="flex flex-col">
                 <div className={kcClsx("kcFormGroupClass")}>
                     <div className={kcClsx("kcLabelWrapperClass")}>
@@ -65,7 +66,7 @@ export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, 
                 <div className={kcClsx("kcFormGroupClass")}>
                     <div className={kcClsx("kcLabelWrapperClass")}>
                         <label htmlFor="password-confirm" className={kcClsx("kcLabelClass")}>
-                            {msg("passwordConfirm")}
+                            Repeat New Password
                         </label>
                     </div>
                     <div className={kcClsx("kcInputWrapperClass")}>
@@ -93,9 +94,9 @@ export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, 
                     </div>
                 </div>
 
-                <LogoutOtherSessions kcClsx={kcClsx} i18n={i18n} />
+                {/* <LogoutOtherSessions kcClsx={kcClsx} i18n={i18n} /> */}
                 <div className=" responsive-container ">
-                    <input className={cn(buttonVariants(), "w-full my-5")} type="submit" value={msgStr("doSubmit")} />
+                    <input className={cn(buttonVariants(), "w-full my-5")} type="submit" value="CHANGE" />
                     {isAppInitiatedAction && (
                         <Button
                             // className={kcClsx("kcButtonClass", "kcButtonDefaultClass", "kcButtonLargeClass")}
