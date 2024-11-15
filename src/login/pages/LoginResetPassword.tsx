@@ -25,18 +25,25 @@ export default function LoginResetPassword(props: PageProps<Extract<KcContext, {
             classes={classes}
             displayInfo
             displayMessage={!messagesPerField.existsError("username")}
-            infoNode={realm.duplicateEmailsAllowed ? msg("emailInstructionUsername") : msg("emailInstruction")}
-            headerNode={msg("emailForgotTitle")}
+            infoNode={
+                <div id="kc-registration" className="">
+                    <span id="kc-page-subtitle">
+                        Having troubles?
+                    </span>
+                    <a tabIndex={9} href="#" className="link-style ">
+                        Contact Support
+                    </a>
+                </div>
+            }
+            headerNode={"Forgot Password"}
         >
+
+            <p id="kc-page-subtitle" style={{ marginTop: -20 }}>Please complete with your registered email and follow the instructions</p>
             <form id="kc-reset-password-form" className={kcClsx("kcFormClass")} action={url.loginAction} method="post">
                 <div className={kcClsx("kcFormGroupClass")}>
                     <div className={kcClsx("kcLabelWrapperClass")}>
                         <label htmlFor="username" className={kcClsx("kcLabelClass")}>
-                            {!realm.loginWithEmailAllowed
-                                ? msg("username")
-                                : !realm.registrationEmailAsUsername
-                                  ? msg("usernameOrEmail")
-                                  : msg("email")}
+                            {msg("email")}
                         </label>
                     </div>
                     <div className={kcClsx("kcInputWrapperClass")}>
@@ -61,23 +68,13 @@ export default function LoginResetPassword(props: PageProps<Extract<KcContext, {
                         )}
                     </div>
                 </div>
-                <div>
-                    <div id="kc-form-options">
-                        <div>
-                            <span>
-                                <a href={url.loginUrl} className={cn(buttonVariants({ variant: "link" }), "underline p-0 ")}>
-                                    {msg("backToLogin")}
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-
+                <div style={{ marginTop: 150 }}>
                     <div id="kc-form-buttons" className="">
                         <input
                             // className={kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonBlockClass", "kcButtonLargeClass")}
                             className={cn(buttonVariants({ variant: "default" }), "w-full ")}
                             type="submit"
-                            value={msgStr("doSubmit")}
+                            value={"SEND"}
                         />
                     </div>
                 </div>
