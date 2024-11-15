@@ -29,6 +29,24 @@ p.instruction {
 
 h1#kc-page-title {
     margin-top: 10px;
+    text-align: left;
+}
+
+#kc-page-subtitle {
+    color: #9c9c9c;
+    font-size: medium;
+}
+
+.registration-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.registration-container #kc-page-subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 #kc-locale ul {
@@ -195,7 +213,9 @@ div.kc-logo-text span {
 }
 
 #kc-registration {
-    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* TOTP */
@@ -627,3 +647,7 @@ ul#kc-totp-supported-apps {
     overflow-wrap: break-word
 }
 /* End Recovery codes */
+
+.text-grey {
+  color: #9c9c9c;
+}

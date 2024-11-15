@@ -179,14 +179,15 @@ export function Template(props: TemplateProps<KcContext, I18n>) {
             </div>
             <Card className="py-0 px-3  md:-[40rem] shadow-2xl w-full min-h-screen  md:w-[30rem] sm:min-h-fit ">
                 <CardContent className="space-y-8 pb-5 ">
-                    <div className="flex justify-end space-x-4 pt-2">
-                        {languageSelector()}
-                        <ModeToggle />
-                    </div>
                     <header className="text-center  ">
                         {(() => {
                             const node = !(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
-                                <h1 id="kc-page-title">{headerNode}</h1>
+                                <>
+                                    <div className="mt-5">
+                                        <img src="https://uc0cbccaf7afadbf239cbfe35208.previews.dropboxusercontent.com/p/thumb/ACfSFYBqliCMo1sfTHItmRoJAnat87uVCWPyH_JapP6ZdoGgL6VyLt3LVIVJT9TiT3PA2MHHPBCLHfeJuGlFsXGsCqH442SS2gKRw_fju3B06y4b8J9kt2nTrPbh7QE54Ky6cY-QyG9z9iOp35YyYX5blrZHnQ76aIXpnwwg8CbbIuX_SRs0lGahZ3he_Di3aIceRlG8XbPb94EMluwF2-KrwwzFT6ZtpeAfotAK0K7F6N9PLAwsMdELUkjFAWFS4VM95YZuEyRVSb5INOTtJfwTYsEqVkMh0g97OOqmRQNg0Q5s8u3bNYds3kOryo4GLA81_FJYXe17ymm1hh6vCGM4JkKGLp_FuPcL59tA00yikhLn-NRGl5lBE5FCHsrikw0/p.jpeg?is_prewarmed=true" style={{ width: 150, margin: "auto" }} />
+                                    </div>
+                                    <h1 id="kc-page-title">{headerNode}</h1>
+                                </>
                             ) : (
                                 <div id="kc-username" className={kcClsx("kcFormGroupClass")}>
                                     <label id="kc-attempted-username">{auth.attemptedUsername}</label>
